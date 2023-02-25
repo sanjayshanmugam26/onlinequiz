@@ -1,0 +1,177 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/script.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<!--quiz pages-->
+
+<div class="page1" id="page1">
+    <h1 class="quiz"><span>"</span> Let's test your knowledge </h1>
+    <div class="get_name">
+        <h1>Enter your Name</h1>
+        <h4>Just type your name Or your nickname.</h4>
+        <input type="text" name="name" id="name" placeholder="Type your answer here..." required>
+        <div class="page1_btn">
+            <button onclick="changepage('page1','page2')">start quiz</button>
+        </div>
+    </div>
+</div>
+<div class="page2" style="display: none;" id="page2">
+    <h1><span>1.</span>Which famous con-artist's life is the flim <b>Catch Me If You Can</b> based on?</h1>
+    <img src="~/image/catchmeifyoucan.jpg" alt="Catch Me If You Can" width="480px" height="250px">
+    <div class="grid_btn">
+        <button class="0option1" onclick="optionselect0('0option1')">
+            <div class="btn_op">A</div>Gregor Macgregor
+        </button>
+        <button class="0option2" onclick="optionselect0('0option2')">
+            <div class="btn_op">B</div>Charles Ponzi
+        </button>
+        <button class="0option3" onclick="optionselect0('0option3')">
+            <div class="btn_op">c</div>Bernard Madoff
+        </button>
+        <button class="0option4" onclick="optionselect0('0option4');scorecount(1);">
+            <div class="btn_op">D</div>Frank Abagnale
+        </button>
+    </div>
+    <div class="page2_btn">
+        <button onclick="changepage('page2','page3')">continue</button>
+    </div>
+</div>
+
+<div class="page3" style="display: none;" id="page3">
+    <h1><span>2.</span>How many stars that the US flag have?</h1>
+    <div class="grid_btn">
+        <button class="1option1" onclick="optionselect1('1option1')">
+            <div class="btn_op">A</div>25
+        </button>
+        <button class="1option2" onclick="optionselect1('1option2')">
+            <div class="btn_op">B</div>64
+        </button>
+        <button class="1option3" onclick="optionselect1('1option3');scorecount(1);">
+            <div class="btn_op">c</div>52
+        </button>
+        <button class="1option4" onclick="optionselect1('1option4')">
+            <div class="btn_op">D</div>10
+        </button>
+    </div>
+    <div class="page3_btn">
+        <button onclick="changepage('page3','page4');">
+            continue
+        </button>
+    </div>
+</div>
+
+<div class="page4" style="display: none;" id="page4">
+    <h1><span>3.</span>Which of these is the <b>Albanian</b> flag?</h1>
+    <div class="flex_btn">
+        <button class="2option1" onclick="optionselect2('2option1')">
+            <img src="~/image/Andorra.png" alt="">
+            <div class="btn_op">A</div>
+        </button>
+        <button class="2option2" onclick="optionselect2('2option2');scorecount(1);">
+            <img src="~/image/Albania.png" alt="">
+            <div class="btn_op">B</div>
+        </button>
+        <button class="2option3" onclick="optionselect2('2option3')">
+            <img src="~/image/India.png" alt="">
+            <div class="btn_op">C</div>
+        </button>
+        <button class="2option4" onclick="optionselect2('2option4')">
+            <img src="~/image/Korea-South.png" alt="">
+            <div class="btn_op">D</div>
+        </button>
+    </div>
+    <div class="page4_btn">
+        <button onclick="changepage('page4','page5')">continue</button>
+    </div>
+</div>
+
+<div class="page5" style="display: none;" id="page5">
+    <h1><span>4.</span>How many heart does an <b>Octopus</b> have?</h1>
+    <div class="heart_btn">
+        <button class="3option1" onclick="optionselect3('3option1')">
+            <span class="material-icons">favorite_border</span>
+            <p>1</p>
+        </button>
+        <button class="3option2" onclick="optionselect3('3option2')">
+            <span class="material-icons">favorite_border</span>
+            <p>2</p>
+        </button>
+        <button class="3option3" onclick="optionselect3('3option3');scorecount(1);">
+            <span class="material-icons">favorite_border</span>
+            <p>3</p>
+        </button>
+        <button class="3option4" onclick="optionselect3('3option4')">
+            <span class="material-icons">favorite_border</span>
+            <p>4</p>
+        </button>
+    </div>
+    <div class="page5_btn">
+        <button onclick="changepage('page5','page6')">continue</button>
+    </div>
+</div>
+
+<div class="page4" style="display: none;" id="page6">
+    <h1><span>5.</span>Which of these is the <b>Indian</b> flag?</h1>
+    <div class="flex_btn">
+        <button class="4option1" onclick="optionselect4('4option1')">
+            <img src="~/image/Andorra.png" alt="">
+            <div class="btn_op">A</div>
+        </button>
+        <button class="4option2" onclick="optionselect4('4option2')">
+            <img src="~/image/Albania.png" alt="">
+            <div class="btn_op">B</div>
+        </button>
+        <button class="4option3" onclick="optionselect4('4option3');scorecount(1);">
+            <img src="~/image/India.png" alt="">
+            <div class="btn_op">C</div>
+        </button>
+        <button class="4option4" onclick="optionselect4('4option4')">
+            <img src="~/image/Korea-South.png" alt="">
+            <div class="btn_op">D</div>
+        </button>
+    </div>
+    <div class="page6_btn">
+        <button onclick="changepage('page6','page7'); finalscore()">Submit</button>
+    </div>
+</div>
+
+<div class="page7" style="display: none;" id="page7">
+    <div class="image"><img src="~/image/win.png" alt="" width="600" height="400"></div>
+    <h3>You got <span id="scorevalue">0</span>/5 answer correct <span id="ch_name">Challenger</span>.</h3>
+        <div class="page7_btn content">
+            <button class="retry" onclick="window.location.reload(page1)">Retry</button>
+            <button class="score" onclick="window.open('/onlinequiz/score','_self')">score</button>
+        </div>
+
+        <table class="score_tb">
+    <thead>
+        <tr>
+            <th>challenger name</th>
+            <th>Scores</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+                <tr>
+                    <th name="challenger_name" id="challenger_name"></th>
+                    <th name="challenger-score" id="challenger_score"></th>
+                    
+                </tr>
+           
+    </tbody>
+</table>
+</div>
+

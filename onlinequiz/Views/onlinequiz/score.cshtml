@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/script.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+<table class="score_tb" id="score_tb">
+    <thead>
+        <tr>
+            <th>challenger id</th>
+            <th>challenger name</th>
+            <th>Scores</th>
+        </tr>
+    </thead>
+    <tbody>
+
+            @if (ViewBag.Score.Count > 0)
+            {
+                int i = 1;
+                foreach (var row in ViewBag.Score)
+                {
+                <tr>
+                    <td>@i</td>
+                    <td>@row.challenger_name.ToString()</td>
+                    <td>@row.challenger_score.ToString()</td>
+                </tr>
+                    i++;
+                }
+            }
+            @*<th name="challenger_name" id="challenger_name"></th>
+            <th name="challenger-score" id="challenger_score"></th>*@
+            
+
+
+
+    </tbody>
+</table>
+
+<button class="retry_score" onclick="window.open('/onlinequiz/ques','_self')">Retry</button>
